@@ -8,12 +8,12 @@ except ImportError:
 from aws_r53_dyndns.exceptions import NotFoundException
 
 
-class ExternalIpAddressProvider(object):
+class PublicIpAddressProvider(object):
     def get_ip(self):
         raise NotImplementedError()
 
 
-class IpifyExternalAddressProvider(ExternalIpAddressProvider):
+class IpifyPublicIpAddressProvider(PublicIpAddressProvider):
     name = 'ipify'
 
     def get_ip(self):
@@ -21,8 +21,8 @@ class IpifyExternalAddressProvider(ExternalIpAddressProvider):
         return response
 
 
-def get_external_ip(provider_name='ipify'):
-    classes = ExternalIpAddressProvider.__subclasses__()
+def get_public_ip(provider_name='ipify'):
+    classes = PublicIpAddressProvider.__subclasses__()
     for cls in classes:
         if cls.name == provider_name:
             return cls().get_ip()
