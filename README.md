@@ -16,7 +16,9 @@ You should have two conditions:
 * AWS credentials file
 * Proper IAM permission to Route53
 
-You might have an AWS credentials file on your home directory (~/.aws/credentials) if you're using awscli or boto3. Or simply create the file with this content:
+You might have an AWS credentials file on your home directory (~/.aws/credentials) if you're using awscli or boto3. 
+
+Or simply create the file with this content:
 
 ```
 [default]
@@ -54,3 +56,7 @@ If you're using IAM account, the account should have below permission at least.
     ]
 }
 ```
+
+Replace `{hosted_zone_id}` with yours. 
+
+You can see your zone id when you visit Route53 hosted zone with an URL on web browser, such like this: `https://console.aws.amazon.com/route53/home?regions=....#resource-record-sets:{your_hosted_zone_id}`
