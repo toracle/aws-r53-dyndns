@@ -12,7 +12,6 @@ from aws_r53_dyndns.ip_providers import get_public_ip
 def main():
     argparser = get_argparser()
     options = argparser.parse_args()
-    print(options)
 
     domain = options.domain
     zone = options.zone or get_zone_from_domain(domain)
