@@ -22,7 +22,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'aws-r53-dyndns=aws_r53_dyndns:main',
+            'aws-r53-dyndns=aws_r53_dyndns.main:main',
         ]
     },
     classifiers=[
