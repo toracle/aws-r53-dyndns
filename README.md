@@ -1,6 +1,10 @@
 ## Install and Run
 
+Install with:
+
 `pip install git+https://github.com/toracle/aws-r53-dyndns.git`
+
+And run with:
 
 `aws-r53-dyndns <your domain>`
 
@@ -11,6 +15,16 @@ You should have two conditions:
 
 * AWS credentials file
 * Proper IAM permission to Route53
+
+You might have an AWS credentials file on your home directory (~/.aws/credentials) if you're using awscli or boto3. Or simply create the file with this content:
+
+```
+[default]
+aws_access_key_id=<your_access_key_id>
+aws_secret_access_key=<your_secret_access_key>
+```
+
+If you're using IAM account, the account should have below permission at least.
 
 ```
 {
