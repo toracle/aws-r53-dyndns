@@ -17,7 +17,7 @@ class IpifyPublicIpAddressProvider(PublicIpAddressProvider):
     name = 'ipify'
 
     def get_ip(self):
-        response = urlopen('https://api.ipify.org/?format=text').read()
+        response = urlopen('https://api.ipify.org/?format=text').read().decode('utf8')
         return response
 
 
