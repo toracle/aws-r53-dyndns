@@ -30,11 +30,12 @@ def get_aws_credentials(options):
 
 
 def get_aws_credentials_from_config(path):
-    if not os.path.isfile(path):
-        raise NotFoundException("AWS credentials file is not exist on ~/.aws/credential! Install awscli and run 'aws configure'")
+    _path = os.path.abspath(os.path.expanduser(path))
+    if not os.path.isfile(_path):
+        raise NotFoundException("AWS credentials file is not exist on {}! Install awscli and run 'aws configure'".format(_path))
 
     cfg = ConfigParser()
-    cfg.read(path)
+    cfg.read(_path)
     aws_access_key_id = cfg['default']['aws_access_key_id']
     aws_secret_access_key = cfg['default']['aws_secret_access_key']
     return {
