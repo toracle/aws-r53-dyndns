@@ -9,6 +9,24 @@ And run with:
 `aws-r53-dyndns <your domain>`
 
 
+## Usage
+
+```
+usage: Update AWS Route53 A record [-h] [--zone [ZONE]] [--provider [{ipify}]]
+                                   [--aws-credentials-path [AWS_CREDENTIALS_PATH]]
+                                   domain
+
+positional arguments:
+  domain                domain to update
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --zone [ZONE]         zone name. guess from domain if not given
+  --provider [{ipify}]  ip address provider
+  --aws-credentials-path [AWS_CREDENTIALS_PATH]
+                        path of aws credentials file
+```
+
 ## Prerequisite
 
 You should have two conditions:
