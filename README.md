@@ -1,6 +1,10 @@
+# AWS Route53 Dyndns
+
 [![Build Status](https://travis-ci.org/toracle/aws-r53-dyndns.svg?branch=master)](https://travis-ci.org/toracle/aws-r53-dyndns)
 
-## Install and Run
+A simple tool to update AWS Route53 domain A record. Tested with py27, py35.
+
+## Quickstart
 
 Install with:
 
@@ -80,3 +84,8 @@ If you're using IAM account, the account should have below permission at least.
 Replace `{hosted_zone_id}` with yours. 
 
 You can see your zone id when you visit Route53 hosted zone with an URL on web browser, such like this: `https://console.aws.amazon.com/route53/home?regions=....#resource-record-sets:{your_hosted_zone_id}`
+
+## TODO
+
+* [ ] Choose AWS credential profile other than 'default'
+* [ ] Some output messages
