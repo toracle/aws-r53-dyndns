@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/toracle/aws-r53-dyndns.svg?branch=master)](https://travis-ci.org/toracle/aws-r53-dyndns)
+
 ## Install and Run
 
 Install with:
