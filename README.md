@@ -88,4 +88,5 @@ You can see your zone id when you visit Route53 hosted zone with an URL on web b
 ## TODO
 
 * [ ] Choose AWS credential profile other than 'default'
+* [ ] Use other credential method than a ini file (eg. specify as an argument directly, use env var)
 * [ ] Some output messages
