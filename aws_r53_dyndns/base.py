@@ -45,7 +45,7 @@ def get_aws_credentials_from_config(path):
 
 
 def get_argparser():
-    argparser = ArgumentParser('Update AWS Route53 A record')
+    argparser = ArgumentParser()
     argparser.add_argument(
         'domain',
         help='domain to update'
