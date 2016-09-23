@@ -18,9 +18,9 @@ And run with:
 ## Usage
 
 ```
-usage: Update AWS Route53 A record [-h] [--zone [ZONE]] [--provider [{ipify}]]
-                                   [--aws-credentials-path [AWS_CREDENTIALS_PATH]]
-                                   domain
+usage: aws-r53-dyndns [-h] [--zone [ZONE]] [--provider [{ipify}]]
+                      [--aws-credentials-path [AWS_CREDENTIALS_PATH]]
+                      domain
 
 positional arguments:
   domain                domain to update
