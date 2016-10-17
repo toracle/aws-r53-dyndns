@@ -15,7 +15,7 @@ logger = logging.getLogger('aws-r53-dyndns')
 
 
 def create_record(zone, domain, new_ip):
-    status = zone.add_a(domain, new_ip)
+    status = zone.add_a(domain, new_ip, ttl=600)
     return status
 
 
