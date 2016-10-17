@@ -14,11 +14,25 @@ from aws_r53_dyndns.exceptions import NotFoundException
 logger = logging.getLogger('aws-r53-dyndns')
 
 
-def update_record(credential, zone, domain, new_ip):
+def create_record(zone, domain, new_ip):
+    status = zone.add_a(domain, new_ip)
+    return status
+
+
+def update_record(zone, domain, new_ip):
+    status = zone.update_a(domain, new_ip)
+    return status
+
+
+def update_or_create_record(credential, zone, domain, new_ip):
     conn = Route53Connection(**credential)
     _zone = conn.get_zone(zone)
-    status = _zone.update_a(domain, new_ip)
-    return status
+    records = _zone.get_a(domain)
+
+    if records:
+        update_record(_zone, domain, new_ip)
+    else:
+        create_record(_zone, domain, new_ip)
 
 
 def get_zone_from_domain(domain):

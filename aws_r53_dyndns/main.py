@@ -2,7 +2,7 @@
 
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 
-from aws_r53_dyndns.base import update_record
+from aws_r53_dyndns.base import update_or_create_record
 from aws_r53_dyndns.base import get_aws_credentials
 from aws_r53_dyndns.base import get_zone_from_domain
 from aws_r53_dyndns.base import get_argparser
@@ -19,4 +19,4 @@ def main():
     credential = get_aws_credentials(options)
     
     ip = get_public_ip(provider_name)
-    update_record(credential, zone, domain, ip)
+    update_or_create_record(credential, zone, domain, ip)
